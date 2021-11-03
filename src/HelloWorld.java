@@ -67,7 +67,7 @@ public class HelloWorld {
         // that applies across different platforms and programs.
         //Unicode allows us to represent these languages by using a combination of the two bytes
         // that a char takes up in memory it can represent and one of 65535 diffent characters.
-       // char myunicode = '\u00A9'; //specify unicode convention characters by using \u in java
+       // char myunicode = '\u00A9'; //specify unicode convention characters by using \ u in java
        // System.out.println(myunicode); no why no work
          
          //it is best practice to name booleans with is then question.
@@ -76,6 +76,30 @@ public class HelloWorld {
         //Appending values using String. is inefficient and not recommended. Instead using s StringBuffer
         // is recommended.
 
+        //Expressions are formed by combining variable, literals method return values, and operators.
+        // in the line below 15 + 12 is the expression which has (or returns) 27 in this case.
+        int myVal = 15 + 12;
 
+        //if-then statement is the most basic of all the control flow statements. It tells your program to execute a
+        // certain section of code only if a particular test evaluates to true. AKA Conditional logic
+        //Conditional logic uses specific statements in java to allow us to check a condition and execute certain code
+        // based on whether that condition is true or false.
+        boolean is = false;
+        if (is == false) //not using a code block on an if statement only allows 1 line of code to be read at a time.
+            System.out.println("koop is!!!!");
+        //Code block: Allows more than one statement to be executed - a block of code.
+        // Proper format of a if statement -->
+        if (is == false){
+            System.out.println(is);
+        }
+        // && logical and operator
+        // & bitwise and operator working on the bit level
+        // || logical or operator
+        // | bitwise or operator working on the bit level
+
+        int newValue = 50;
+        if (newValue == 50){
+            System.out.println("This is an error");
+        }
     }
 }
