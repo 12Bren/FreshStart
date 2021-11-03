@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.lang.Character;
 public class HelloWorld {
     public static void main(String[] args) {
         //The public java keyword is a access modifier: access modifier allows us to define
@@ -37,6 +37,7 @@ public class HelloWorld {
         //If you put a value larger than the maximum/minimum value of a data type in java you will get
         // an overflow. In the case of the maximum value or an underflow in the case of the minimum.
         // The computer will skip back to the minimum or maximum number.
+
         int no = 2_147_483_647; // this ok too for java 7 and up
         byte vaild = 23;
         short val = 12322;
@@ -59,6 +60,22 @@ public class HelloWorld {
         // floating point numbers are stored.
         //Java has a class called bigDecimal that overcomes said limitation. But for big calculations
         // float and double are just fine.
+
+        //char is much more useful than it seems uses 16bits of data allowing the store of unicode
+        // characters. Unicode: is a international encoding standard for use with different languages
+        // and scripts. By which each letter, digit, or symbol is assigned a unique numeric value
+        // that applies across different platforms and programs.
+        //Unicode allows us to represent these languages by using a combination of the two bytes
+        // that a char takes up in memory it can represent and one of 65535 diffent characters.
+       // char myunicode = '\u00A9'; //specify unicode convention characters by using \u in java
+       // System.out.println(myunicode); no why no work
+         
+         //it is best practice to name booleans with is then question.
+        boolean ishegay = false;
+
+        //Appending values using String. is inefficient and not recommended. Instead using s StringBuffer
+        // is recommended.
+
 
     }
 }
