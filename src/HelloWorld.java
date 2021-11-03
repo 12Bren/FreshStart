@@ -101,5 +101,34 @@ public class HelloWorld {
         if (newValue == 50){
             System.out.println("This is an error");
         }
+        boolean wda = false;
+        if (wda = true)
+            System.out.println("neat");
+        // ! NOT operator AKA logical complement operator
+
+        //Ternary operator (?:): A shortcut to assigning one of two values to a variable depending
+        // on a given condition. It's a shortcut of the if-then-else statement.
+        int age = 20;
+        boolean isEighteenOrOver = age == 20? true:false;
+        // operand one -  age == 20 in this case is the condition we are checking.
+        // It needs to return true or false
+        // Operand two - true here is the value to assign to the variable isEighteenOrOver if the
+        // condition in operand one is true.
+        // Operand three - false here is the value to assign to the variable isEighteenOrOver if the
+        // condition in operand one was false
+
+        //Operator Challenge:
+        double doub = 20.00;
+        double dum = 80.00;
+        double result = (doub + dum) * 100.00;
+        double remain = result % 40.00;
+        boolean istu = remain == 0? true:false;
+        System.out.println(istu);
+        if (!istu){
+            System.out.println("Got some remainder");
+        }
+
+
     }
+
 }
