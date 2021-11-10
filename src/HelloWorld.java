@@ -127,8 +127,57 @@ public class HelloWorld {
         if (!istu){
             System.out.println("Got some remainder");
         }
+        boolean gameOver = true;
+        int score = 800;
+        int levelComplete = 5;
+        int bonus = 100;
+        int highScore;
+        highScore = calculateScore(true, 800, levelComplete, bonus); //call method  with no arguments
+        //passing information to a method = creating parameters
+        // arguments are the actual values to be placed withing the methods parameters
+
+        System.out.println("your high score is " + highScore);
+
+         highScore = calculateScore(true,10000,8,200);
+        System.out.println("your high score is " + highScore);
+
+        //method challendge check main...
+
+        //DiffMerge Tool: compare a single file or even the whole folder to visually see
+        // the differences side by side (external application)
+
+        System.out.println(toMilesPerHour(25.42));
+        printConversion(10.25);
+    }
 
 
+    public static long toMilesPerHour(double kilometersPerHour){
+        long roundedValue = -1;
+        double milePerHour;
+        if (kilometersPerHour > 0){
+           milePerHour = kilometersPerHour * 0.6213711922;
+           roundedValue = Math.round(milePerHour);
+        }
+        return roundedValue;
+    }
+
+    public static void printConversion(double kilometersPerHour){
+        long milePerHour;
+        milePerHour = toMilesPerHour(kilometersPerHour);
+        System.out.println(+kilometersPerHour + " Km/h = " + milePerHour+" Mp/h");
+    }
+
+
+    public static int calculateScore(boolean gameOver,int score,int levelComplete,int bonus){
+    //If the method is to return something instead of defining void define the return type of the method
+        if (gameOver) {
+            int finalScore = score + (levelComplete * bonus);
+            finalScore += 100;;
+            return finalScore; // when returning a value of anykind. All variations of the return
+            // must be accounted for. In this can the method needs to return something if true and if false.
+        }
+        else
+            return -1; //return must return the same type in information. -1 is known as error in general
     }
 
 }

@@ -7,6 +7,7 @@ public class INub {
     public static void main(String[] args) {
         sayHi();
         System.out.println("before say hi");
+
     }
 
     static void tetString(){

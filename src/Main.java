@@ -1,5 +1,6 @@
 import java.util.*;
 public class Main {
+    public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         INub.sayHi();
         int kool = (int) 9.0;
@@ -76,25 +77,59 @@ public class Main {
 //        }
 
 //        # 🚨 Don't change the code below 👇
-        int two_digit_number = sc.nextInt();
-        //# 🚨 Don't change the code above 👆
+//        int two_digit_number = sc.nextInt();
+//        //# 🚨 Don't change the code above 👆
+////
+//        //####################################
+//        //#Write your code below this line 👇
+//       int kpo = two_digit_number;
+//       int plk = two_digit_number;
+//        while(plk >= 10){
+//            plk = plk/ 10;
+//        }while (kpo >= 100){
+//            kpo = kpo / 100;
+//        }
 //
-        //####################################
-        //#Write your code below this line 👇
-       int kpo = two_digit_number;
-       int plk = two_digit_number;
-        while(plk >= 10){
-            plk = plk/ 10;
-        }while (kpo >= 100){
-            kpo = kpo / 100;
-        }
+//        int var = two_digit_number +  kpo;
+//
+//        System.out.println("the sum of your num is "+ var);
 
-        int var = two_digit_number +  kpo;
-
-        System.out.println("the sum of your num is "+ var);
-
+        displayHighScorePosition("poser12", 1500);
+        displayHighScorePosition("poser12", 1000);
+        displayHighScorePosition("poser12", 900);
+        displayHighScorePosition("poser12", 400);
+        displayHighScorePosition("poser12", 50);
+        //The other way to do this is by making a variable for positionInHighScoreTable
+        // int positionInHighScoreTable = calculateHighScorePosition(int 1500) then pass the arguments
+        //displayHighScorePosition("poser12",positionInHighScoreTable);
     }
-   public static Scanner sc = new Scanner(System.in);
 
+    public static void displayHighScorePosition(String playersName, int positionInHighScoreTable){
+        System.out.println(playersName + " managed to get into position " +
+                calculateHighScorePosition(positionInHighScoreTable)+" On the high score table!" );
+    }
+
+    public static int calculateHighScorePosition(int playerScore){
+//        if (playerScore >= 1000){
+//            return 1;
+//        }else if (playerScore >=500 ){
+//            return 2;
+//        }else if (playerScore >=100 ){
+//            return 3;
+//        }
+//        return 4;
+        //Another way of doing this without multiple return statements is by switching return with a variable.
+        // By assuming the variable will return 4. This makes it easier to read
+
+        int Position = 4;
+        if (playerScore >= 1000){
+            Position = 1;
+        }else if (playerScore >=500 ){
+            Position = 2;
+        }else if (playerScore >=100 ){
+            Position = 3;
+        }
+        return Position;
+    }
 
 }
