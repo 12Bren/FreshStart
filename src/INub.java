@@ -17,6 +17,9 @@ public class INub {
     static void sayHi(){
         System.out.println("I_Nub");
 
+        sawds dwads dwsawd dwads
+
+
 
     }
 }

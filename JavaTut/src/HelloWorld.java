@@ -11,7 +11,7 @@ public class HelloWorld {
         //class:
         //method: A collection of statements (one or more) that perform an operation
         //static: a java keyword that needs an understanding of other concepts.
-         //void a java keyword used to indicate that the method will not return anything
+        //void a java keyword used to indicate that the method will not return anything
         System.out.println("Hello loop"); //this is considered a statement
         //statement: A complete command to be executed and can include one or more expressions
         //declaration statement: defines a variable by indicating the data type, and the name,
@@ -68,10 +68,10 @@ public class HelloWorld {
         // that applies across different platforms and programs.
         //Unicode allows us to represent these languages by using a combination of the two bytes
         // that a char takes up in memory it can represent and one of 65535 diffent characters.
-       // char myunicode = '\u00A9'; //specify unicode convention characters by using \ u in java
-       // System.out.println(myunicode); no why no work
-         
-         //it is best practice to name booleans with is then question.
+        // char myunicode = '\u00A9'; //specify unicode convention characters by using \ u in java
+        // System.out.println(myunicode); no why no work
+
+        //it is best practice to name booleans with is then question.
         boolean ishegay = false;
 
         //Appending values using String. is inefficient and not recommended. Instead using s StringBuffer
@@ -139,7 +139,7 @@ public class HelloWorld {
 
         System.out.println("your high score is " + highScore);
 
-         highScore = calculateScore(true,10000,8,200);
+        highScore = calculateScore(true,10000,8,200);
         System.out.println("your high score is " + highScore);
 
         //method challendge check main...
@@ -170,12 +170,12 @@ public class HelloWorld {
         int swhtd = 90;
         switch (swhtd){ //value to test for (vari able name or expression)
             case 1: // testing for if swhtd == 1
-               System.out.println("hello 1");
-               break; // closes the case 1 statment must always close with break
+                System.out.println("hello 1");
+                break; // closes the case 1 statment must always close with break
             case 3:
                 System.out.println("case 3");
                 break;
-                case 4: case 5:case 90:
+            case 4: case 5:case 90:
                 System.out.println("This case test for multiple solutions all in one line. very limited");
                 break;
             default: // If no case is true then...
@@ -294,7 +294,32 @@ public class HelloWorld {
         // to validate if the input is proper and is correct.
         //--------------------------------
         //challenge
-
+        // challenge passed
+        //--------------------------------
+        // Constructors(methods): i.e. BankAccount()
+        // instead of writting out the initial values when setting fields a better
+        // method is to use a constructor. When initializing a new object Java automatically calls
+        // (meaning you have to creat the method) the constructor(method) for you. it's purpose is
+        // to physically creat the object from the class for you
+        // constructors is special, it has only the access modifier and the class name no need to
+        // specify void/return types. It's only ever called one (at the start) when creating the object
+        // also java does make the constructor automatically aswell as calls it so normally would never
+        // need to make the constructor method i.e. BankAccount()
+        // using the constructor method allows for you to set all initial fields
+        // just like methods constructors can be overloaded.
+        // you can call a constructor from another constructor
+        // (if an empty constructor is called perhaps you would want to create the object with default values)
+        // i.e if the empty constructor is called then inside that one call the constructor that has parameters
+        // using the keyword "this()" (this time it's a method) and pass the values through that method
+        // "this()" is only ever used to call constructors within constructors. Also "this()" can only be used
+        // when overloading the constructor method. Also all perameters passed through "this()" are only
+        // used when no parameters are defined after the object has been initialized in Main class.
+        // also when calling this() it must be the first statement in constructor body
+        // best practice is to use 1 constructor to define default values and 1 empty constructor that calls
+        // the constructor that has default values. May end up with multiple constructors as the code becomes
+        // more complex.
+        //--------------------
+        //challenge
         System.out.println("model is "+porsche.getModel());
     }
 
@@ -302,7 +327,7 @@ public class HelloWorld {
         if (feet >= 0 || inches <0 || inches > 12){
 
             System.out.println("invalid perameters");
-            }
+        }
 
         double confeet =  30.48 * feet;
         double coninche = 2.54  * inches;
@@ -337,8 +362,8 @@ public class HelloWorld {
         long roundedValue = -1;
         double milePerHour;
         if (kilometersPerHour > 0){
-           milePerHour = kilometersPerHour * 0.6213711922;
-           roundedValue = Math.round(milePerHour);
+            milePerHour = kilometersPerHour * 0.6213711922;
+            roundedValue = Math.round(milePerHour);
         }
         return roundedValue;
     }
@@ -351,7 +376,7 @@ public class HelloWorld {
 
 
     public static int calculateScore(boolean gameOver,int score,int levelComplete,int bonus){
-    //If the method is to return something instead of defining void define the return type of the method
+        //If the method is to return something instead of defining void define the return type of the method
         if (gameOver) {
             int finalScore = score + (levelComplete * bonus);
             finalScore += 100;;

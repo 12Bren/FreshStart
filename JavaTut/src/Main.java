@@ -2,7 +2,7 @@ import java.util.*;
 public class Main {
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        INub.sayHi();
+
         int kool = (int) 9.0;
         byte hop = (byte) 1254;
         int hope = hop;
@@ -163,9 +163,9 @@ public class Main {
                 sum+= i; // sum to print when exit for loop
                 System.out.println("found number "+ i);
             }
-                if (a == 0) {
-                    break;
-                }
+            if (a == 0) {
+                break;
+            }
         }
         System.out.println("sum = "+sum); //failed
         //---------------------
@@ -272,16 +272,13 @@ public class Main {
         scanner.close();
 */
         //------------------------------------------------------------------------------------
-        //challenge
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.setCustomerName("Brandon K");
-        bankAccount.setPhoneNumber("301-554-2594");
-        bankAccount.setAccountNumber(101258739);
-        bankAccount.setBalance(152.23);
-
-        bankAccount.deposit(12.2);
+        //challenge  passed
+        BankAccount bankAccount = new BankAccount(25484, 5, "Brandon K",
+                "lop@yahoo.com", "(301)-554-2594");// BankAccount() is a constructor
+        bankAccount.deposit(11);
         bankAccount.withdraw(15);
-        System.out.println(bankAccount.getBalance());
+        // challenge 2
+
 
     }
 
