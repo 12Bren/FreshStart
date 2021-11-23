@@ -335,6 +335,62 @@ public class HelloWorld {
         // the dog has(1) a Dog has a body(1) etc only keep the field from Animal that apply to this specific Dog
         // can also overide Animal methods within Dog. When doing so use the super.methodName() within
         // the overided method
+        //---------------------
+        // recap:
+        //Using the analogy of a house to understand classes. A class is a blueprint for a house, using the blueprint
+        // (plans) we can build as many houses as we want based on those plans.
+        // each hosue you build (in other words instantiate using the "new" operator) is an object also known as an
+        // instance. Each house you build has an address (a physical location). In other words if you want to tell
+        // someone where you live, you give them your address (perhaps written on a piece of paper).
+        // This is known as a reference.
+        // you can copy that refernce as many times as you'd like but there is still just one house.
+        // In other words we are copying the paper that has the address on it not the house itself.
+        //  We can pass references as parameters to constructors and methods.
+        // Lets go deeper to make it clearer.
+        House blueHouse = new House("blue"); // creates a new instance of the class House. Remember,
+        // House is a blueprint, and we are assigning it to the blueHouse variable. In other words,
+        // it is a reference to the object in memory.
+
+        House anotherHouse = blueHouse; // creates another reference to the same object in memory (blueHouse)
+        // There is still one house, but two refernces to that object. In other words, we have two pieces
+        // of paper with the physical address of where the house is built (going back to our real world example).
+
+        System.out.println(blueHouse.getColor());//prints blue.
+        System.out.println(anotherHouse.getColor());//blue
+        // Both will print blue since we have two refernces to the same object (House class)
+
+        anotherHouse.setColor("yellow"); // This line calles setColor() and sets the color to yellow.
+        // blueHouse and anotherHouse. still have the same color why? Remember,we have 2 references
+        // that point to the same object in memory. Once we change the color, of one, both references still
+        // point to the same object. In our real world example, there is still just one physical house
+        // at that one address, even though we have written the same address on two pieces of paper.
+
+        System.out.println(blueHouse.getColor()); //yellow
+        System.out.println(anotherHouse.getColor()); //yellow
+        // 2 print statements are printing the same color. yellow since we still have two references
+        // that point to the same object in memory.
+
+        House greenHouse = new House("green"); // creating another new instance of the House class with the
+        // color set to green. Now we have two objects in memory but we have three references which are
+        // blueHouse, anotherHouse, and greenHouse. The variable (reference) greenHouse points
+        // to a different object in memory, but blueHouse and anotherHouse point to the same object in memory.
+
+        anotherHouse = greenHouse; // addigning greenHouse to anotherHouse. in other words we are dereferencing
+        // anotherHouse. It will now point to a different object in memory. Before it was pointing to a house that
+        // had the yellow color, now it points to the house that has the green color. In this scenario we still
+        // have three references and two objects in memory but blueHouse points to one object while anotherHouse
+        // and greenHouse points to the same object in memory.
+
+        System.out.println(blueHouse.getColor());//prints yellow since the blueHouse variable (reference) points to
+        // the object in memory that has the yellow color.
+
+        System.out.println(greenHouse.getColor());//the next two lines prints green since both
+        // anotherHouse and greenHouse point to the same object in memory.
+        System.out.println(anotherHouse.getColor());//green
+
+        // Here we have the Main class with the main method. This code is creating instance of the House class,
+        // changing the color and printing out the result. Lets see what happens when this code is executed. ^^^
+
         System.out.println("model is "+porsche.getModel());
     }
 
