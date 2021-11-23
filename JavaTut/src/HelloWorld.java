@@ -320,6 +320,21 @@ public class HelloWorld {
         // more complex.
         //--------------------
         //challenge
+        //bullshit challenge failed
+        //----------------------------
+        // inheritance part-1
+        // inheritance is for things that share characteristics aka inherit commonly used standard behavior
+        // from other classes.
+        // a good example is creating a class that holds all methods commonly used for Animals.
+        // I.e body, brain, cells, etc. Not all animals have legs or arms
+        // when extending(inhariting) the constructor must call the inharited class
+        // after setting the Animal fields instead of making new fields for all Animals a better method is
+        // to creat a method such as "eat" this method is then available to all extended classes
+        // also, when using a super constructor the parameters fields should be the extended classes fields
+        // instead of the Animals fields. i.e. you know the Dog has a brain so just pass the number of brains
+        // the dog has(1) a Dog has a body(1) etc only keep the field from Animal that apply to this specific Dog
+        // can also overide Animal methods within Dog. When doing so use the super.methodName() within
+        // the overided method
         System.out.println("model is "+porsche.getModel());
     }
 

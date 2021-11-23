@@ -278,8 +278,19 @@ public class Main {
         bankAccount.deposit(11);
         bankAccount.withdraw(15);
         // challenge 2
+        VipCustomer vipCustomer = new VipCustomer();
+        System.out.println(vipCustomer.getName());
+        VipCustomer vop2 = new VipCustomer("nom",250000);
+        System.out.println(vop2.getEmail());
+        VipCustomer person3 = new VipCustomer("mop","email@yahoo",8000);
+        System.out.println(person3.getName());
 
-
+        Animal animal = new Animal(1, 1, 1, "anima", 5); //base characteristics of
+        // Animal
+        Dog dog = new Dog(100, "dogo",1,2,4,1,25,"furry");
+        dog.eat();
+        dog.walk();
+        dog.run();
     }
 
     public static int sumDigits(int number) {
