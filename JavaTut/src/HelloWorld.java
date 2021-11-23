@@ -390,7 +390,43 @@ public class HelloWorld {
 
         // Here we have the Main class with the main method. This code is creating instance of the House class,
         // changing the color and printing out the result. Lets see what happens when this code is executed. ^^^
+        // Keep in mind, in java you always have references to an object in memory, there is no way to access an
+        // object directly everything is done using a reference.
+        //---------------------
+        //This and Super keywords:
+        // super is used to access/call the parent class members (variables and methods).
+        // this is used to call the current members (variables and methods). This is required when we have
+        // a parameter with the same name as an instance variable (field).
 
+        // NOTE: we can use both of them anywhere in a class except static areas
+        // (the static block or a static method). Any attempt to do so will lead to compile-time errors
+        // (more on static later in the course).
+
+        // the keyword "this" is commonly used with constructors and setters, and optionally in getters
+        // (easier for beginners). chech House class for more...->
+
+        // The keyword "super" commonly used with method overriding, when we call a method with
+        // the same name from the parent class.
+        //In the example below we have a method printMethod that calls
+        // super.printMethod
+        /*
+        *  class SuperClass {
+        *   public void printMethod(){
+        *        System.out.println("Printed in SuperClass"));
+        *   }
+        * }
+        * Class SubClass extends SuperClass {  //SubClass AKA child class
+        * // overide method from parent
+        * @Override
+        * public void printMethod(){
+        *       super.printMethod(); // called method in superclass (parent)
+        *       System.out.println("Printed in SubClass");
+        * }
+        * class MainClass {
+        *       public static void main(String[] args){
+        *           SubClass s = new SubClass();
+        *           s.printMethod();
+        * */
         System.out.println("model is "+porsche.getModel());
     }
 
