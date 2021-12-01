@@ -407,8 +407,12 @@ public class HelloWorld {
 
         // The keyword "super" commonly used with method overriding, when we call a method with
         // the same name from the parent class.
-        //In the example below we have a method printMethod that calls
-        // super.printMethod
+        //In the example below we have a method printMethod that calls super.printMethod
+        // in other words, it's calling the method with the same name from the class.
+        // Without the keyword super in this case it would be a recursive call. Meaning that the method
+        // would call itself forever (or until memory is fully used). That is why super keyword is needed.
+        // so that we can call a method with the same name from a parent class.
+
         /*
         *  class SuperClass {
         *   public void printMethod(){
@@ -427,7 +431,134 @@ public class HelloWorld {
         *           SubClass s = new SubClass();
         *           s.printMethod();
         * */
+
+        // in Java we have the this() call. Notice the braces, it is known as a call since
+        // it looks like a regular method.
+        // use this() to call a constructor from another overloaded constructor in the same class.
+        // the call to this() can be used only in a constructor, and it must be the first statement in a constructor.
+        // it's used with constructor chaining, AKA when one constructor calls another constructor, and helps to
+        // reduce duplicate code.
+        // the only way to call a parent constructor is by calling super(). This calls the parent constructor.
+
+        // The java compiler puts a default call to super() if we don't add it, and it is always the no-args super
+        //  which is inserted by compiler (constructor without arguments).
+        // the call to super() must be the first statement in each constructor.
+        // Even abstract classes have constructors, although you can never instantiate an abstract class
+        // using the "new" keyword.
+        // An abstract class is still a super class, so it's constructor run when someone makes an instance
+        // of a concrete subclass
+        //NOTE: A constructor can have a call to super() or this() but never both.
+        // check House for more info.... ->
+        //------------------------
+        //Method Overloading vs Overriding Recap
+        // differences between method overloading and overriding
+        // method overloading: Providing two or more separate methods in a class with the same name but
+        // different parameters.
+        // Method return type may or may not be different and that allows us to reuse the same method name.
+        // Overloading is very handy, it reduces duplicated code and we don't have to remember multiple
+        // method names.
+        // Overloading doesn't have anything to do with polymorphism but Java developers
+        // often refer to overloading as Compile-Time Polymorphism.
+        // in other words the compiler decided which method is going to be called based on the method name,
+        // return type, and argument list.
+        // static and instance methods can be overloaded aswell (static and instance methods later course)
+
+        // Usually overloading happens inside a single class, but a method can also be treated as
+        // overloaded in the subclass od that class.
+        // that is because a subclass inherits one version of the method from the parent class.
+        // and then the subclass can have another overloaded version of the method.
+
+        //method overloading rules
+        // Methods will be considered overloaded if both follow the following rules:
+        // Methods must have the same method name.
+        // Methods must have different parameters.
+        //if methods follow the rules above then they may or may not:
+        // Have different return types.
+        // Have different access modifiers.
+        // Throw different checked or unchecked exceptions.(more on exceptions later)
+        //-----
+        //Method Overriding
+        // method overriding: defining a method in a child class that already exists in the parent class
+        // with the same signature (same name, same arguments)
+        // by extending the parent class the child class gets all the methods defined in the parent class.
+        // (those methods are also known as derived methods)
+        // method overriding is also known as runtime polymorphism and dynamic method dispatch, because
+        // the method that is going to be called is decided at runtime by the JVM
+
+        // when overriding a method it's recommended to put @Override immediately above the method definition.
+        // This is an annotation that the compiler reads and will then show us an error if we don't follow
+        // overriding rules correctly
+        // method overriding can't override static methods just instance methods
+
+        //Method overriding rules
+        // Method will be considered overridden if we follow these rules:
+        // It must have the same name and same arguments
+        // Return type can be a subclass of the return type in the parent class.
+        // It can't have a lower access modifier.
+        // For example if the parent method is protected then using private in the child is not allowed
+        // but using public in the child would be allowed
+
+        //Method overriding
+        // there are also some important points about method overriding to keep in mind
+        // only inherited methods can be overridden, in other words methods can be overridden
+        // only in child classes.
+        // constructors and private methods cannot be overriden.
+        // A subclass can use super.methodName() to call the superclass version of an overriden method
+
+        //Covariant type: a return type that is in the parent-vhild relationship. aka (is-a relationship)
+        // i.e. burger methods...
+
+        //Static methods
+        // Static methods are declared using a static modifier.
+        // Static methods can't access instance methods and instance variables directly
+        // They are usually used for operations that don't require any data from an instance of the class
+        // (from 'thie')
+        // 'this' keyword is the current instance of a class.
+
+        // in static methods we can't use the this keyword
+        // ehrnrver you see a method that doesn't instance variables thaat method should be declared as
+        // static method
+        // i.e. main() is a static method and it is called by the JVM ehrn it starts an application
+
+        //Instance methods
+        // instance methods belong to an instance of a class
+        // to use instance methods you have to instantiate the class first usually bu using the new
+        // keyword
+        // instance methods can access instance methods and instance variables directly
+        // instance methods can also access static methods and static variables directlu
+
+        //Static Variables
+        // Declared by using the keyword static
+        // static vaiables are also known as static member variables
+        // every instance of that class shares the same static variable
+        // if changes are made to that variable, all other instances will see the effect of the change
+
+        // static variables aren't used very often but can sometimes be very useful
+        // for example when reading user input using scanner we will declare scanner as a static variable
+        // that way static methods can access it directly
+
         System.out.println("model is "+porsche.getModel());
+    }
+
+    class BurgerFactory {
+
+        public Burger/*covariant return type*/ CreateBurger(){
+            return new Burger();
+        }
+    }
+    class HealthyBurgerFactory extends BurgerFactory {
+
+        @Override
+        public HealthyBurger/*covariant return type*/ CreateBurger(){
+            return  new HealthyBurger();
+        }
+    }
+
+    class Burger {
+        //field methods
+    }
+    class HealthyBurger extends Burger{
+        //field methods....
     }
 
     public static double calcFeetAndInchesToCentimeters(double feet, double inches) {
