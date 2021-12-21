@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.lang.Character;
 import java.util.Scanner;
 public class HelloWorld {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         //The public java keyword is a access modifier: access modifier allows us to define
         // the scope or how other parts of peoples code can access your code
 
@@ -270,7 +270,7 @@ public class HelloWorld {
         // since a class is a blueprint and using private variables and methods (usually)
         // to get to the fields of a class you must first initialize the class as an object
         // i.e Car car = new Car; key word "new" (This must be done in the main class)
-        Car porsche = new Car(); // build an object (Car) and based it on porsche (also read..line275)
+        /*Car porsche = new Car();*/ // build an object (Car) and based it on porsche (also read..line275)
         // when a class is created and fields are added when called in main() java sees the class as
         // a data type and treats it as such
         // also read: defined an object of type Car called porsche
@@ -281,7 +281,7 @@ public class HelloWorld {
         // when calling the data type porsche instead of directly modifying the fields defined in the
         // class "Car" (via changing a private field to public) it's better to keeps it private and
         // pass the updated information through a public/protected method created in the class Car
-        porsche.setModel("model name"); // instead of porsche.model = "model name";
+        /*porsche.setModel("model name");*/ // instead of porsche.model = "model name";
         // also, when passing "model name" to the variable "model" you must use the keyword "this."fields name""
         // instead of the method to be called i.e "setModel"...
         // "this."fields name"" is a keyword in java for passing a methods parameters information to the
@@ -536,6 +536,12 @@ public class HelloWorld {
         // static variables aren't used very often but can sometimes be very useful
         // for example when reading user input using scanner we will declare scanner as a static variable
         // that way static methods can access it directly
+
+        //Instance Variables
+        // every instance has it's own copy of an instance variable
+        // every instance can have a different value(state)
+        // instance variables represent the state of an instance
+        //--------
 
         System.out.println("model is "+porsche.getModel());
     }

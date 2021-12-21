@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main {
+public class Main extends Object{
     public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -291,6 +291,9 @@ public class Main {
         dog.eat();
         dog.walk();
         dog.run();
+        //------------
+        //inharatance challenge
+
     }
 
     public static int sumDigits(int number) {
